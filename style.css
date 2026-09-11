@@ -3,3 +3,9 @@
     border: 1px solid black;
     gap: 10px;
 }
+
+.smallDiv{
+    width: 40px;
+    height: 40px;
+    border: 1px solid red;
+}
