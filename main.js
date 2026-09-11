@@ -11,6 +11,10 @@ btn.addEventListener("click", (e) => {
             newDiv.classList.add("smallDiv");
 
             container.appendChild(newDiv);
+
+            newDiv.addEventListener("mouseenter", (e) => {
+                e.target.style.backgroundColor = "blue";
+            });
         }
     }
 });
