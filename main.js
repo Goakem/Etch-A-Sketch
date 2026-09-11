@@ -1,10 +1,19 @@
 const container = document.querySelector(".container");
+const btn = document.querySelector("#btn");
 
-const totalDiv = 3;
+btn.addEventListener("click", (e) => {
+    const userInput = prompt("Enter a number between 0 and 100:");
+    debugger;
 
-for(let i = 0; i < totalDiv; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("smallDiv");
+    for(let i = 0; i < userInput; i++) {
+        for(let j = 0; j < userInput; j++) {
+            const newDiv = document.createElement("div");
+            newDiv.classList.add("smallDiv");
 
-    container.appendChild(newDiv);
-}
+            container.appendChild(newDiv);
+        }
+    }
+});
+
+
+
