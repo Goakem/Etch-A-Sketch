@@ -1,10 +1,11 @@
 .container {
     display: flex;
     border: 1px solid black;
-    gap: 10px;
-    padding: 10px;
+    gap: 5px;
+    padding: 5px;
     justify-content: center;
     flex-flow: wrap;
+    width: 757px;
 }
 
 .smallDiv{
