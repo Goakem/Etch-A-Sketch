@@ -15,6 +15,9 @@ btn.addEventListener("click", (e) => {
             newDiv.addEventListener("mouseenter", (e) => {
                 e.target.style.backgroundColor = "blue";
             });
+            newDiv.addEventListener("mouseout", (e) => {
+                e.target.style.backgroundColor = "initial";
+            })
         }
     }
 });
