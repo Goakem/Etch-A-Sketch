@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const btn = document.querySelector("#btn");
 
 function createNewDiv () {
-    const userInput = prompt("Enter a number between 0 and 100:");
+    const userInput = prompt("Enter a number between 1 and 100:");
 
     for(let i = 0; i < userInput; i++) {
         for(let j = 0; j < userInput; j++) {
@@ -21,9 +21,9 @@ function createNewDiv () {
     }
 }
 
-function removeAllDiv(container){
-    while(container.firstChild) {
-        container.remove(firstChild);
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
     }
 }
 
@@ -32,13 +32,9 @@ btn.addEventListener("click", (e) => {
 
     if (clickCount === 1) {
         createNewDiv();
-        
     } else if (clickCount > 1) {
-        
+ 
         removeAllChildNodes(container);
         createNewDiv();
     }
 });
-
-
-
