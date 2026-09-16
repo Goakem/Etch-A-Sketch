@@ -1,9 +1,8 @@
 const container = document.querySelector(".container");
 const btn = document.querySelector("#btn");
 
-btn.addEventListener("click", (e) => {
+function createNewDiv () {
     const userInput = prompt("Enter a number between 0 and 100:");
-    debugger;
 
     for(let i = 0; i < userInput; i++) {
         for(let j = 0; j < userInput; j++) {
@@ -19,6 +18,25 @@ btn.addEventListener("click", (e) => {
                 e.target.style.backgroundColor = "initial";
             })
         }
+    }
+}
+
+function removeAllDiv(container){
+    while(container.firstChild) {
+        container.remove(firstChild);
+    }
+}
+
+btn.addEventListener("click", (e) => {
+    let clickCount = performance.eventCounts.get("click");
+
+    if (clickCount === 1) {
+        createNewDiv();
+        
+    } else if (clickCount > 1) {
+        
+        removeAllChildNodes(container);
+        createNewDiv();
     }
 });
 
