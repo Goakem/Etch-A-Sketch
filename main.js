@@ -9,6 +9,14 @@ function createNewDiv () {
             const newDiv = document.createElement("div");
             newDiv.classList.add("smallDiv");
 
+            const newDivHeight = (container.offsetHeight / +userInput);
+            const newDivWidth = (container.offsetWidth / +userInput);
+
+            newDiv.style.width = newDivWidth + "px";
+            newDiv.style.height = newDivHeight + "px";
+            console.log(typeof newDivHeight);
+            console.log(typeof newDivWidth);
+
             container.appendChild(newDiv);
 
             newDiv.addEventListener("mouseenter", (e) => {
