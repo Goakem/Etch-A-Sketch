@@ -11,16 +11,9 @@ function createNewDiv () {
 
             const containerTrueHeight = container.offsetHeight - 12;
             const containerTrueWidth = container.offsetWidth - 12;
-            console.log(`This is containers width and height after the 
-                adding of paddings, Height: ${containerTrueHeight} 
-                & ${containerTrueWidth}`
-            );
 
             const numberOfFlexGap = userInput - 1;
             const sizeOfFlexGap = numberOfFlexGap * 5;
-            console.log(`This is the size of the gap 
-                between elements ${sizeOfFlexGap}`
-            );
             
             const childrenDivWidth = containerTrueWidth - sizeOfFlexGap;
             const newDivWidth = (childrenDivWidth / userInput) - 2;
@@ -30,8 +23,6 @@ function createNewDiv () {
 
             newDiv.style.width = newDivWidth + "px";
             newDiv.style.height = newDivHeight + "px";
-            console.log(typeof newDivHeight);
-            console.log(typeof newDivWidth);
 
             container.appendChild(newDiv);
 
