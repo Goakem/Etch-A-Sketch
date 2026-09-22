@@ -2,22 +2,21 @@ const container = document.querySelector(".container");
 const btn = document.querySelector("#btn");
 
 let userInput = 16;
-
-const containerTrueHeight = container.offsetHeight - 12;
-const containerTrueWidth = container.offsetWidth - 12;
-
-const numberOfFlexGap = userInput - 1;
-const sizeOfFlexGap = numberOfFlexGap * 5;
-
-const shareableContainerWidth = containerTrueWidth - sizeOfFlexGap;
-const newDivWidth = (shareableContainerWidth / userInput) - 2;
-
-
-const shareableContainerHeight = containerTrueHeight -sizeOfFlexGap;
-const newDivHeight = (shareableContainerHeight / userInput) - 2;
-
 for(let i = 0; i < userInput; i++) {
         for(let j = 0; j < userInput; j++) {
+            const containerTrueHeight = container.offsetHeight - 12;
+            const containerTrueWidth = container.offsetWidth - 12;
+
+            const numberOfFlexGap = userInput - 1;
+            const sizeOfFlexGap = numberOfFlexGap * 5;
+
+            const shareableContainerWidth = containerTrueWidth - sizeOfFlexGap;
+            const newDivWidth = (shareableContainerWidth / userInput) - 2;
+
+
+            const shareableContainerHeight = containerTrueHeight -sizeOfFlexGap;
+            const newDivHeight = (shareableContainerHeight / userInput) - 2;
+
             const newDiv = document.createElement("div");
             newDiv.classList.add("smallDiv");
 
@@ -33,13 +32,23 @@ for(let i = 0; i < userInput; i++) {
     }
 
 function createNewDiv () {
-    let userInput = Number(prompt("Enter a number between 1 and 100:"));
+    userInput = Number(prompt("Enter a number between 1 and 100:"));
 
     if ((userInput < 1) || (userInput > 100) || (userInput === NaN)) {
         userInput = Number(prompt("You must pick a number btw 1 & 100"));
     }
 
+    const containerTrueHeight = container.offsetHeight - 12;
+    const containerTrueWidth = container.offsetWidth - 12;
 
+    const numberOfFlexGap = userInput - 1;
+    const sizeOfFlexGap = numberOfFlexGap * 5;
+
+    const shareableContainerWidth = containerTrueWidth - sizeOfFlexGap;
+    const newDivWidth = (shareableContainerWidth / userInput) - 2;
+
+    const shareableContainerHeight = containerTrueHeight -sizeOfFlexGap;
+    const newDivHeight = (shareableContainerHeight / userInput) - 2;
     for(let i = 0; i < userInput; i++) {
         for(let j = 0; j < userInput; j++) {
             const newDiv = document.createElement("div");
