@@ -2,34 +2,34 @@ const container = document.querySelector(".container");
 const btn = document.querySelector("#btn");
 
 let userInput = 16;
+const containerTrueHeight = container.offsetHeight - 12;
+const containerTrueWidth = container.offsetWidth - 12;
+
+const numberOfFlexGap = userInput - 1;
+const sizeOfFlexGap = numberOfFlexGap * 5;
+
+const shareableContainerWidth = containerTrueWidth - sizeOfFlexGap;
+const newDivWidth = (shareableContainerWidth / userInput) - 2;
+
+
+const shareableContainerHeight = containerTrueHeight -sizeOfFlexGap;
+const newDivHeight = (shareableContainerHeight / userInput) - 2;
 for(let i = 0; i < userInput; i++) {
-        for(let j = 0; j < userInput; j++) {
-            const containerTrueHeight = container.offsetHeight - 12;
-            const containerTrueWidth = container.offsetWidth - 12;
+    for(let j = 0; j < userInput; j++) {
 
-            const numberOfFlexGap = userInput - 1;
-            const sizeOfFlexGap = numberOfFlexGap * 5;
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("smallDiv");
 
-            const shareableContainerWidth = containerTrueWidth - sizeOfFlexGap;
-            const newDivWidth = (shareableContainerWidth / userInput) - 2;
+        newDiv.style.width = newDivWidth + "px";
+        newDiv.style.height = newDivHeight + "px";
 
+        container.appendChild(newDiv);
 
-            const shareableContainerHeight = containerTrueHeight -sizeOfFlexGap;
-            const newDivHeight = (shareableContainerHeight / userInput) - 2;
-
-            const newDiv = document.createElement("div");
-            newDiv.classList.add("smallDiv");
-
-            newDiv.style.width = newDivWidth + "px";
-            newDiv.style.height = newDivHeight + "px";
-
-            container.appendChild(newDiv);
-
-            newDiv.addEventListener("mouseenter", (e) => {
-                e.target.style.backgroundColor = "blue";
-            });
-        }
+        newDiv.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = "blue";
+        });
     }
+}
 
 function createNewDiv () {
     userInput = Number(prompt("Enter a number between 1 and 100:"));
